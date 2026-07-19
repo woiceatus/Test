@@ -1,0 +1,22 @@
+# Hysteria 2 — Realms mode (NAT server, public rendezvous)
+# No inbound port forwarding needed. Server registers outbound to realm.hy2.io.
+listen: realm://public@realm.hy2.io/nat-e98fe97b4b80d45637a71027
+
+auth:
+  type: password
+  password: hdPv7JO81amfBLTbXw147A
+
+tls:
+  cert: /etc/hysteria/certs/server.crt
+  key: /etc/hysteria/certs/server.key
+  sniGuard: disable
+
+masquerade:
+  type: proxy
+  proxy:
+    url: https://www.bing.com
+    rewriteHost: true
+
+bandwidth:
+  up: 100 mbps
+  down: 100 mbps

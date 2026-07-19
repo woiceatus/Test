@@ -1,0 +1,18 @@
+# Hysteria 2 client — connect to NAT server via public Realms rendezvous
+server: realm://public@realm.hy2.io/nat-e98fe97b4b80d45637a71027
+
+auth: hdPv7JO81amfBLTbXw147A
+
+tls:
+  insecure: true
+  pinSHA256: 6885812c56c993cc510da65511472fbbae55030263b758a33338bd30d8877644
+
+bandwidth:
+  up: 100 mbps
+  down: 100 mbps
+
+socks5:
+  listen: 127.0.0.1:1080
+
+http:
+  listen: 127.0.0.1:7890

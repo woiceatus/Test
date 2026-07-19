@@ -1,0 +1,67 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 1080
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "hysteria2",
+      "tag": "hy2-nat-realm",
+      "password": "hdPv7JO81amfBLTbXw147A",
+      "up_mbps": 100,
+      "down_mbps": 100,
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "certificate_public_key_sha256": [
+          "Lg9pIcAk1gabyGYWCLn0tGT52FO7aT9FmzwqLxeJkyo="
+        ],
+        "alpn": [
+          "h3"
+        ]
+      },
+      "realm": {
+        "server_url": "https://realm.hy2.io",
+        "token": "public",
+        "realm_id": "nat-e98fe97b4b80d45637a71027",
+        "stun_servers": [
+          "stun.nextcloud.com:3478",
+          "stun.sip.us:3478",
+          "global.stun.twilio.com:3478"
+        ]
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ],
+    "final": "hy2-nat-realm",
+    "auto_detect_interface": true
+  }
+}
