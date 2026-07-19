@@ -1,4 +1,4 @@
-# Hysteria 2 client — connect to deployed server
+# Hysteria 2 client — connect to this server
 server: realm+http://VMdg6sjbzmqj35tF2Q0SXSZw5IH09SfP@34.199.139.218:8080/hy2-realm-80ed955ec0c2007b
 
 auth: hdPv7JO81amfBLTbXw147A
