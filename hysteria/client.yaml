@@ -1,11 +1,11 @@
-# Hysteria 2 client — connect to deployed server
-server: realm+http://VMdg6sjbzmqj35tF2Q0SXSZw5IH09SfP@34.199.139.218:8080/hy2-realm-80ed955ec0c2007b
+# Hysteria 2 client — connect to NAT server via public Realms rendezvous
+server: realm://public@realm.hy2.io/nat-e98fe97b4b80d45637a71027
 
 auth: hdPv7JO81amfBLTbXw147A
 
 tls:
   insecure: true
-  pinSHA256: e8d07d336afec2a348acfc09747f01a653ccea14fcdc032122f3c3d8a235ec8e
+  pinSHA256: 6885812c56c993cc510da65511472fbbae55030263b758a33338bd30d8877644
 
 bandwidth:
   up: 100 mbps

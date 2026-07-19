@@ -1,9 +1,6 @@
-# Hysteria 2 server — Realms mode
-# Rendezvous uses plain HTTP (realm+http://). TLS cert below is for the QUIC proxy only.
-#
-# If rendezvous runs on the same host, use 127.0.0.1 in the listen URI.
-# External clients must use your public IP/domain in their client config instead.
-listen: realm+http://VMdg6sjbzmqj35tF2Q0SXSZw5IH09SfP@127.0.0.1:8080/hy2-realm-80ed955ec0c2007b
+# Hysteria 2 — Realms mode (NAT server, public rendezvous)
+# No inbound port forwarding needed. Server registers outbound to realm.hy2.io.
+listen: realm://public@realm.hy2.io/nat-e98fe97b4b80d45637a71027
 
 auth:
   type: password
