@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hyperrealistic Gray Tabby — Canvas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Outfit:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg0: #1a1814;
+      --bg1: #2c2820;
+      --ink: #e8e2d6;
+      --muted: #9a9184;
+      --accent: #c4a882;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      min-height: 100%;
+      background:
+        radial-gradient(ellipse 90% 70% at 50% 35%, #3a342c 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 70% 80%, #2a241c 0%, transparent 50%),
+        linear-gradient(165deg, #1a1814 0%, #12100e 100%);
+      color: var(--ink);
+      font-family: "Outfit", sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.25rem 3rem;
+      gap: 1.25rem;
+    }
+    header {
+      text-align: center;
+      max-width: 42rem;
+    }
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .brand em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .sub {
+      margin-top: 0.55rem;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .stage {
+      position: relative;
+      width: min(920px, 96vw);
+      aspect-ratio: 1 / 1.08;
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(196, 168, 130, 0.18),
+        0 40px 80px rgba(0, 0, 0, 0.55),
+        0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #2a2620;
+    }
+    .status {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-height: 1.2em;
+    }
+    .status.done { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="brand">Plush <em>Gray</em></h1>
+    <p class="sub">Standing silver tabby · front-right three-quarter · canvas studio</p>
+  </header>
+  <div class="stage">
+    <canvas id="c" width="1100" height="1188" aria-label="Hyperrealistic standing gray tabby cat"></canvas>
+  </div>
+  <p class="status" id="status">Rendering…</p>
+  <script src="cat.js"></script>
+</body>
+</html>
